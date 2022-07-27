@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - StarwarsAPI</title>
+        
+        <link rel="stylesheet" href="~/css/style.css" />
+    
+    </head>
+    <body>
+        <header>
+        
+        </header>
+        
+            <main role="main">
+                @RenderBody()
+            </main>
+    
+
+    
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/setup.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+	    
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+</html>

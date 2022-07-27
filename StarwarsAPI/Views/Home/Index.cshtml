@@ -1,0 +1,116 @@
+﻿@model IEnumerable<StarWarsApiCSharp.Film>
+
+<div class="container">
+
+    <div class="lateral-menu">
+        <img src="img/logo.png" alt="">
+        <div class="menu-items">
+            <ul>
+                <li> 
+                    
+                    <img id="myBtn" src="img/dashboard.svg" alt="">
+                    <p id="myBtn">Dashboard</p>
+                </li>
+                <li>
+                    <img src="img/personagens.svg" alt="">
+                    <p>Personagens</p>
+                </li>
+                <li>
+                    <img src="img/planetas.svg" alt="">
+                    <p>Planetas e luas</p>
+                </li>
+                <li>
+                    <img src="img/nave.svg" alt="">
+                    <p>Naves espaciais</p>
+                </li>
+            </ul>
+        </div>
+            
+        <div class="settings">
+            
+            <img src="img/settings.svg" alt="">
+            <p>Configurações</p>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="cont">
+            
+            <div class="cards-header">
+                
+                <div class="card card-small" >
+                    <div class="card-content">
+                        <div class="card-info">
+                            <p>Personagens</p>
+                            <h2>@TempData["PeopleCount"]</h2>
+                        </div>
+                        <img src="/img/personagens-black.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="card card-large">
+                    <div class="card-container">
+
+                        
+                        <div class="card-content">
+                            <div class="card-info">
+                                <p>Veiculos</p>
+                                <h2>@TempData["VehiclesCount"]</h2>
+                            </div>
+                            <img width=100 src="/img/motocicleta.png" alt="">
+                        </div>
+                        
+
+                        <div class="card-content">
+                            <div class="card-info">
+                                <p>Planetas</p>
+                                <h2>@TempData["PlanetCount"] </h2>
+                            </div>
+                            <img src="/img/planetas-black.svg" alt="">
+                        </div>
+
+                    </div>                        
+                </div>
+
+                <div class="card card-small">
+                    <div class="card-content">
+                        <div class="card-info">
+                            <p>Planetas</p>
+                            <h2>@TempData["StarshipsCount"]</h2>
+                        </div>
+                        <img src="/img/nave-black.svg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="table">
+                <h5>Ultimos filmes</h5>
+                <p>Saiba os ultimos lançamentos da marca</p>
+                <table id="filmsTable">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Estréias</th>
+                            <th>Diretor</th>
+                            <th>Episódio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var i in Model)
+                            {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem=> i.Title)</td>
+                                <td>@Html.DisplayFor(modelItem=> i.ReleaseDate)</td>
+                                <td>@Html.DisplayFor(modelItem=> i.Director)</td>
+                                <td>@Html.DisplayFor(modelItem=> i.EpisodeId)</td>
+                            </tr>                                 
+                            }
+                    </tbody>
+                </table>
+            </div>              
+        </div>
+    </div>
+</div>
+
