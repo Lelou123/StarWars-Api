@@ -1,6 +1,6 @@
 # StarWars-Api
 
-Welcome to my repository made from a challenge in the last module of "course C# complete by professor Nelio Alves".
+Welcome to my repository made using the Swapi Api as base
 
 
 ### Languages, Frameworks and APi's
